@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DetailCard from "./components/DetailCard";
 import Header from "./components/Header";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import "./app.css";
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -20,8 +21,9 @@ function App() {
 
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 1000);
   }, []);
+
   const handleChange = (input) => {
     const { value } = input.target;
     setSearchTerm(value);
@@ -67,15 +69,11 @@ function App() {
   return (
     <div className="bg-gray-700 flex items-center justify-center w-screen h-screen py-10">
       {loading ? (
-        <ClimbingBoxLoader 
-        size={30}
-        color={'#F37A24'}
-        loading={loading}
-        />
+        <ClimbingBoxLoader size={30} color={"#F37A24"} loading={loading} />
       ) : (
-        <div className="flex w-3/4 h-3/4 rounded-3xl shadow-lg m-auto bg-gray-100">
+        <div className="flex xl:w-3/4 xl:h-3/4 sm:w-2/4 sm:h-2/4  rounded-3xl shadow-lg m-auto bg-gray-100 app_box_container">
           {/* form card section  */}
-          <div className="form-container">
+          <div className="form-container w-2/4 app_box_container_one">
             <div className="flex items-center justify-center">
               <h3
                 className="my-auto mr-auto text-xl text-pink-800 font-bold shadow-md py-1 px-3 
@@ -125,21 +123,23 @@ function App() {
             </div>
           </div>
           {/* info card section  */}
-          <div className="w-2/4 p-5">
+          <div className="w-2/4 p-5 app_box_container_two">
             <Header />
             <div className="flex flex-col my-10">
               {/* card jsx  */}
               {weatherData.length === 0 ? (
                 <div className="container p-4 flex items-center justify-center h-1/3 mb-auto">
-                  <h1 className="text-gray-300 text-4xl font-bold uppercase">
+                  <h1 className="text-gray-300 text-4xl font-bold uppercase app_nodata">
                     {noData}
                   </h1>
                 </div>
               ) : (
-                <>
-                  <h1 className="text-5xl text-gray-800 mt-auto mb-4">Today</h1>
+                <div className="app_detail_data">
+                  <h1 className="text-5xl text-gray-800 mt-auto mb-4 app_today">
+                    Today
+                  </h1>
                   <DetailCard weather_icon={weatherIcon} data={weatherData} />
-                </>
+                </div>
               )}
             </div>
           </div>
