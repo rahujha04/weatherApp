@@ -1,7 +1,6 @@
 import { useState } from "react";
 import DetailCard from "./components/DetailCard";
 import Header from "./components/Header";
-import SummaryCard from "./components/SummaryCard";
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -47,8 +46,8 @@ function App() {
   }
 
   return (
-    <div className="bg-gray-800 flex items-center justify-center w-screen h-screen py-10">
-      <div className="flex w-3/4 min-h-full rounded-3xl shadow-lg m-auto bg-gray-100">
+    <div className="bg-gray-700 flex items-center justify-center w-screen h-screen py-10">
+      <div className="flex w-3/4 h-3/4 rounded-3xl shadow-lg m-auto bg-gray-100">
           {/* form card section  */}
         <div className="form-container">
           <div className="flex items-center justify-center">
@@ -62,7 +61,7 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center h-full">
-            <h1 className="text-white text-2xl">The Only Weather Forecast You Need</h1>
+            <h1 className="text-white text-2xl">Your Personalized Weather Forecast</h1>
             <hr className="h-1 bg-white w-1/4 rounded-full my-5" />
             <form noValidate onSubmit={handleSubmit} className="flex justify-center w-full">
               <input type="text" 
@@ -92,16 +91,6 @@ function App() {
               <>
                 <h1 className="text-5xl text-gray-800 mt-auto mb-4">Today</h1>
                 <DetailCard weather_icon={weatherIcon} data={weatherData} />
-                <h1 className="text-3xl text-gray-600 mb-4 mt-10">More On {city}</h1>
-                <ul className="grid grid-cols-2  gap-2">
-                  {weatherData.list.map( (days, index) => {
-                    if(index > 0){
-                    return (
-                      <SummaryCard key={index} day={days} />
-                    )
-                  }
-                  })}
-                </ul>
               </>
             }
           </div>
