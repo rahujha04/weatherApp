@@ -67,7 +67,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gray-700 flex items-center justify-center w-screen h-screen py-10">
+    <div className="bg-gray-700 flex items-center justify-center w-screen h-screen py-10 px-10">
       {loading ? (
         <ClimbingBoxLoader size={30} color={"#F37A24"} loading={loading} />
       ) : (
