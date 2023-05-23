@@ -60,10 +60,13 @@
         display: flex;
         flex-direction: column;
     }
+    .app_heading{
+        font-size: 23px;
+    }
 }
 
 
-@media (max-width:840px) {
+@media (max-width:860px) {
     body{
         font-size: 15px;
     }
@@ -169,10 +172,13 @@
         display: flex;
         flex-direction: column;
     }
+    .app_heading{
+        font-size: 22px;
+    }
 }
 
 
-@media (max-width:450px) {
+@media (max-width:500px) {
     body{
         font-size: 15px;
     }
@@ -202,7 +208,12 @@
         padding: 5px;
     }
     .app_detail_data{
-        display: flex;
         flex-direction: column;
+    }
+    .app_detail_second_font{
+        font-size: 12px;
+    }
+    .app_heading{
+        font-size: 15px;
     }
 }

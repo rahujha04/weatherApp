@@ -79,7 +79,7 @@ function App() {
                 className="my-auto mr-auto text-xl text-pink-800 font-bold shadow-md py-1 px-3 
             rounded-md bg-white bg-opacity-30"
               >
-                Forecast
+                Weather Forecast
               </h3>
               <div className="flex p-2 text-gray-100 bg-gray-600 bg-opacity-30 rounded-lg">
                 <i className="fa fa-map my-auto" aria-hidden="true"></i>
@@ -89,7 +89,7 @@ function App() {
               </div>
             </div>
             <div className="flex flex-col items-center justify-center h-full">
-              <h1 className="text-white text-2xl">
+              <h1 className="text-white text-2xl app_heading">
                 Your Personalized Weather Forecast
               </h1>
               <hr className="h-1 bg-white w-1/4 rounded-full my-5" />
